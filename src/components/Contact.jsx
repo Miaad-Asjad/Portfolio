@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Mail, Heart } from "lucide-react";
+import { ArrowUpRight, Mail } from "lucide-react";
 import { site } from "../data/site";
 
 export default function Contact() {

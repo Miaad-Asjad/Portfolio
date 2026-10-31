@@ -9,16 +9,19 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
-import About from "./components/About";
+
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Reviews from "./components/Reviews";
-import Contact from "./components/Contact";
+
 import Footer from "./components/Footer";
-import Hero from "./components/Hero";
+
 
 import LeaveReview from "./components/LeaveReview";
 import AdminReviews from "./components/AdminReviews";
+import Contact from "./components/Contact";
+import Hero from "./components/Hero";
+import About from "./components/About";
 
 function Portfolio() {
   return (
@@ -26,7 +29,7 @@ function Portfolio() {
       <Navbar />
 
       <main>
-        <Hero />
+       <Hero />
         <About />
         <Skills />
         <Projects />

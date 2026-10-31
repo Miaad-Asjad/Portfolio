@@ -28,7 +28,7 @@ export default function Skills() {
           subtitle="From thoughtful React interfaces to dependable backend systems, I turn ideas into practical digital experiences."
         />
 
-        {/* Skills cards */}
+        
         <div className="grid gap-5 lg:grid-cols-3">
           {skills.map((group, index) => {
             const Icon = icons[index % icons.length];
@@ -45,7 +45,7 @@ export default function Skills() {
                       : "bg-white/80"
                   }`}
                 >
-                  {/* Card header */}
+                  
                   <div className="flex items-center justify-between">
                     <span className="grid h-12 w-12 place-items-center rounded-2xl bg-white text-cherry shadow-sm transition duration-300 group-hover:rotate-[-5deg] group-hover:scale-105">
                       <Icon size={22} />
@@ -56,7 +56,7 @@ export default function Skills() {
                     </span>
                   </div>
 
-                  {/* Group details */}
+                  
                   <h3 className="display mt-7 text-2xl text-ink">
                     {group.title}
                   </h3>
@@ -65,7 +65,7 @@ export default function Skills() {
                     {group.note}
                   </p>
 
-                  {/* Skill tags */}
+                  
                   <div className="mt-6 flex flex-wrap gap-2">
                     {group.items.map((item) => (
                       <span
@@ -82,7 +82,7 @@ export default function Skills() {
           })}
         </div>
 
-        {/* Closing note */}
+        
         <Reveal>
           <div className="mt-9 flex items-center justify-center gap-3 text-center">
             <span className="h-px w-8 bg-rose-200 sm:w-12" />
