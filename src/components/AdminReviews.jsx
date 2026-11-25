@@ -86,7 +86,7 @@ export default function AdminReviews() {
     setBusy(true);
 
     try {
-      const data = await api("/admin/invitations", {
+      const data = await api("/api/admin/invitations", {
         method: "POST",
         body: JSON.stringify({ projectName }),
       });
