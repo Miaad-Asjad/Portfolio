@@ -32,7 +32,7 @@ export default function LeaveReview() {
     setSending(true);
 
     try {
-      const response = await fetch(`${API_URL}/reviews/submit`, {
+      const response = await fetch(`${API_URL}/api/reviews/submit`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
