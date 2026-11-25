@@ -65,7 +65,7 @@ export default function AdminReviews() {
     setError("");
 
     try {
-      const response = await fetch(`${API_URL}/admin/reviews`, {
+      const response = await fetch(`${API_URL}/api/admin/reviews`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await response.json();
@@ -116,7 +116,7 @@ export default function AdminReviews() {
     setBusy(true);
 
     try {
-      await api(`/admin/reviews/${id}/status`, {
+      await api(`/api/admin/reviews/${id}/status`, {
         method: "PATCH",
         body: JSON.stringify({ status }),
       });
