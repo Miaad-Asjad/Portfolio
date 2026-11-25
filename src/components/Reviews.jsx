@@ -18,7 +18,7 @@ export default function Reviews() {
 
     let active = true;
 
-    fetch(`${API_URL}/reviews`)
+    fetch(`${API_URL}/api/reviews`)
       .then((response) => {
         if (!response.ok) throw new Error("Could not load reviews");
         return response.json();
