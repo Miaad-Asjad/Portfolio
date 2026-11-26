@@ -17,7 +17,7 @@ function ReviewCard({ review }) {
           <Quote size={20} className="text-rose-300" />
 
           <p
-            className={`mt-3.5 text-sm leading-relaxed text-ink/85 sm:text-[15px] ${
+            className={`display mt-3.5 text-lg leading-snug text-ink/90 sm:text-xl ${
               expanded ? "" : "line-clamp-4"
             }`}
           >
