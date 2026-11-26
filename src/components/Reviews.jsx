@@ -1,10 +1,50 @@
-
 import { useEffect, useState } from "react";
 import { Heart, MessageCircleHeart, Quote, Sparkles } from "lucide-react";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 
 const API_URL = import.meta.env.VITE_API_URL;
+
+function ReviewCard({ review }) {
+  const [expanded, setExpanded] = useState(false);
+  const message = review.message || "";
+  const isLong = message.trim().length > 170;
+
+  return (
+    <Reveal className="h-full">
+      <article className="soft-card flex h-full flex-col justify-between rounded-[1.6rem] p-6">
+        <div>
+          <Quote size={20} className="text-rose-300" />
+
+          <p
+            className={`mt-3.5 text-sm leading-relaxed text-ink/85 sm:text-[15px] ${
+              expanded ? "" : "line-clamp-4"
+            }`}
+          >
+            “{message}”
+          </p>
+
+          {isLong && (
+            <button
+              type="button"
+              onClick={() => setExpanded((prev) => !prev)}
+              className="mt-2.5 text-xs font-medium text-cherry underline-offset-4 hover:underline"
+            >
+              {expanded ? "Show less" : "Read more"}
+            </button>
+          )}
+        </div>
+
+        <div className="mt-5 border-t border-rose-100 pt-4">
+          <p className="text-sm font-semibold text-ink">{review.clientName}</p>
+          <p className="mt-0.5 text-xs text-ink/55">
+            {review.projectName} · Client review
+          </p>
+        </div>
+      </article>
+    </Reveal>
+  );
+}
 
 export default function Reviews() {
   const [reviews, setReviews] = useState([]);
@@ -62,24 +102,9 @@ export default function Reviews() {
             Gathering kind words…
           </div>
         ) : reviews.length > 0 ? (
-          <div className="grid gap-5 md:grid-cols-2">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {reviews.map((review) => (
-              <Reveal key={review._id || review.id}>
-                <article className="soft-card h-full rounded-[1.8rem] p-7 sm:p-9">
-                  <Quote size={26} className="text-rose-300" />
-
-                  <p className="display mt-5 text-2xl leading-relaxed">
-                    “{review.message}”
-                  </p>
-
-                  <div className="mt-7 border-t border-rose-100 pt-5">
-                    <p className="font-semibold">{review.clientName}</p>
-                    <p className="mt-1 text-xs text-ink/55">
-                      {review.projectName} · Client review
-                    </p>
-                  </div>
-                </article>
-              </Reveal>
+              <ReviewCard key={review._id || review.id} review={review} />
             ))}
           </div>
         ) : (

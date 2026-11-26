@@ -17,7 +17,7 @@ export default function Hero() {
       id="home"
       className="relative isolate overflow-hidden px-5 pb-16 pt-24 sm:px-8 md:pb-20 md:pt-28"
     >
-      {/* Soft pastel background */}
+    
       <div
         aria-hidden="true"
         className="pink-grid absolute inset-0 -z-10 opacity-60"
@@ -101,14 +101,14 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right: About card */}
+       
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 12 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
           className="relative mx-auto w-full max-w-md lg:mt-2"
         >
-          {/* Floating greeting */}
+          
           <motion.div
             animate={{ y: [0, -6, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -124,7 +124,7 @@ export default function Hero() {
                   a little about me
                 </span>
                 <Sparkles size={18} className="shrink-0 text-[#D49AAB]" />
-                
+
               </div>
 
               <div className="mt-5 rounded-[1.6rem] bg-blush/65 p-5 sm:p-6">
@@ -141,7 +141,7 @@ export default function Hero() {
                 </p>
               </div>
 
-              {/* Professional info cards */}
+              
               <div className="mt-4 grid grid-cols-2 gap-3">
                 <div className="rounded-2xl border border-rose-100 bg-white p-3.5 sm:p-4">
                   <Code2 size={19} className="text-cherry" />
@@ -170,7 +170,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Small decorative flower */}
+          
           <motion.span
             aria-hidden="true"
             animate={{ rotate: [0, 10, 0], y: [0, -3, 0] }}
